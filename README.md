@@ -4,14 +4,14 @@ This API provides the following methods which are useful for calculating mortgag
 
 GET /payment-amount
 
-Params:
-asking_price: Whole number or decimal greater than or equal to 0.
-down_payment: Whole number of decimal greater than or equal to 0 and less than or equal to the asking price.
-payment_schedule: "weekly", "biweekly", or "monthly"
-amortization_period: Whole number between 5 and 25 inclusive.
+    Params:
+    asking_price: Whole number or decimal greater than or equal to 0.
+    down_payment: Whole number of decimal greater than or equal to 0 and less than or equal to the asking price.
+    payment_schedule: "weekly", "biweekly", or "monthly"
+    amortization_period: Whole number between 5 and 25 inclusive.
 
-Returns a json object with the key "payment_per_period" and the payment amount if the mortgage is allowed.
-Returns a json object with the keys "mortgage_status" = "declined" and the reason if the mortgage is rejected.
+    Returns a json object with the key "payment_per_period" and the payment amount if the mortgage is allowed.
+    Returns a json object with the keys "mortgage_status" = "declined" and the reason if the mortgage is rejected.
 
 GET /mortgage-amount
 
