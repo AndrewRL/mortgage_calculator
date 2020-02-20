@@ -3,6 +3,7 @@ Mortgage Calculator API
 This API provides the following methods which are useful for calculating mortgage information:
 
 GET /payment-amount
+
     Params:
     asking_price: Whole number or decimal greater than or equal to 0.
     down_payment: Whole number of decimal greater than or equal to 0 and less than or equal to the asking price.
@@ -13,6 +14,7 @@ GET /payment-amount
     Returns a json object with the keys "mortgage_status" = "declined" and the reason if the mortgage is rejected.
 
 GET /mortgage-amount
+
     Params:
     payment: Numeric value greater than or equal to 0.
     payment_schedule: "weekly", "biweekly", or "monthly"
@@ -21,6 +23,7 @@ GET /mortgage-amount
     Returns a json object with the key "maximum_mortgage" and the maximum amount of the mortgage
 
 PATCH /interest-rate
+
     Params:
     interest_rate: A percentage value greater than 0.
 
