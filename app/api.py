@@ -57,6 +57,9 @@ async def recurring_payment(request):
 
     asking_price, down_payment, payment_schedule, amortization_period = unpack_params(params, required_keys)
 
+    if asking_price < down_payment:
+        raise HTTPException(HTTP_400_BAD_REQUEST, "The down payment cannot exceed the asking price.")
+
     # Calculate the recurring payment
     mortgage = calc.payment_per_period(asking_price, down_payment, payment_schedule, amortization_period)
 
@@ -107,7 +110,7 @@ async def maximum_mortgage(request):
 
     payment, payment_schedule, amortization_period = unpack_params(params, required_keys)
 
-    max_mortgage = calc.maximum(payment, payment_schedule, amortization_period)
+    max_mortgage = round(calc.maximum(payment, payment_schedule, amortization_period), 2)
     return JSONResponse({'maximum_mortgage': max_mortgage})
 
 

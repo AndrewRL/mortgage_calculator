@@ -41,7 +41,6 @@ class TestMinimumDownPayment(unittest.TestCase):
         result = minimum_down_payment(asking_price)
         self.assertEqual(result, 75000)
 
-# TODO: Make these minimal test cases
 class TestCalculateInsuranceCost(unittest.TestCase):
     def test_no_insurance_required(self):
         insurance_tiers = [

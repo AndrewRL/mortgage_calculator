@@ -27,6 +27,7 @@ class MortgageCalculator:
 
 
     def payment_per_period(self, asking_price, down_payment, payment_schedule, amortization_period):
+
         if down_payment < minimum_down_payment(asking_price):
             return DeclinedMortgage(f'The minimum down payment for an asking price of ${asking_price} is ${minimum_down_payment(asking_price)}.')
 
